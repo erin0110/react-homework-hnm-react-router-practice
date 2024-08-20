@@ -3,6 +3,7 @@ import ProductCard from "../components/ProductCrad/ProductCrad";
 
 const ProductAll = () => {
   const [productList, setProductList] = useState([]);
+  console.log("productList", productList);
 
   const getProducts = async () => {
     let url = `http://localhost:5000/products`;
