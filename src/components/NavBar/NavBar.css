@@ -1,0 +1,74 @@
+header .header-inner {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+.heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 30px;
+}
+.heading h1 {
+  width: 60px;
+  margin: 0 auto;
+}
+.heading h1 img {
+  width: 100%;
+}
+.lnb .sign {
+  position: absolute;
+  right: 30px;
+}
+.lnb .sign a {
+  display: flex;
+  gap: 0 4px;
+  font-size: 14px;
+  color: #000;
+  text-decoration: none;
+}
+.lnb .search {
+  position: absolute;
+  right: 30px;
+  top: 104px;
+}
+.lnb .search button {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  background-color: transparent;
+}
+.lnb .search input {
+  width: 160px;
+  height: 30px;
+  font-size: 14px;
+  padding: 0 6px 0 36px;
+  border: 0;
+  border-bottom: 1px solid #000;
+  box-sizing: border-box;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 30px;
+}
+.nav .menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0 15px;
+}
+.nav .menu li a {
+  font-size: 15px;
+  color: #000;
+  text-decoration: none;
+}
+.nav .menu li a:hover {
+  text-decoration: underline;
+}
