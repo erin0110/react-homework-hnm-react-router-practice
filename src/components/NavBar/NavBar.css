@@ -19,11 +19,14 @@ header .header-inner {
   position: absolute;
   right: 30px;
 }
-.lnb .sign a {
+.lnb .sign button {
   display: flex;
+  align-items: center;
   gap: 0 4px;
   font-size: 14px;
   color: #000;
+  background-color: transparent;
+  border: 0;
   text-decoration: none;
 }
 .lnb .search {

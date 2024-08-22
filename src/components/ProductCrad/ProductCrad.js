@@ -1,19 +1,18 @@
-import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./ProductCrad.css";
 
-const ProductCrad = () => {
+const ProductCrad = ({ item }) => {
+  const navigate = useNavigate();
+  const showDetail = () => {
+    navigate(`/product/${item.id}`);
+  };
   return (
-    <div className="card">
-      <a href="#n">
-        <img
-          src="https://lp2.hm.com/hmgoepprod?set=source[/6d/e0/6de07dd28e647d0d350cf38461cf0425864fa32b.jpg],origin[dam],category[],type[LOOKBOOK],res[z],hmver[1]&call=url[file:/product/main]"
-          alt=""
-        />
-        <em>Conscious choice</em>
-        <span>벨티드 트윌 코트</span>
-        <strong>₩34,900</strong>
-        <i>신제품</i>
-      </a>
+    <div className="prd-card" onClick={showDetail}>
+      <img src={item?.img} alt="" />
+      <em>{item?.choice && "Conscious choice"}</em>
+      <span>{item?.title}</span>
+      <strong>₩{item?.price}</strong>
+      <i>{item?.new && "신제품"}</i>
     </div>
   );
 };

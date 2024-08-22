@@ -1,20 +1,26 @@
 import { faMagnifyingGlass, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import { useNavigate } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 import "./NavBar.css";
 
-const menuList = [
-  "Women",
-  "Men",
-  "Baby",
-  "Kids",
-  "H&M HOME",
-  "Sport",
-  "Sale",
-  "지속가능성",
-];
 const NavBar = () => {
+  const menuList = [
+    "Women",
+    "Men",
+    "Baby",
+    "Kids",
+    "H&M HOME",
+    "Sport",
+    "Sale",
+    "지속가능성",
+  ];
+
+  const navigate = useNavigate();
+  const goToLogin = () => {
+    navigate("/login");
+  };
+
   return (
     <header>
       <div className="header-inner">
@@ -24,10 +30,10 @@ const NavBar = () => {
           </h1>
           <div className="lnb">
             <div className="sign">
-              <a href="#n">
+              <button onClick={goToLogin}>
                 <FontAwesomeIcon icon={faUser} />
                 LOGIN
-              </a>
+              </button>
             </div>
             <div className="search">
               <button>
