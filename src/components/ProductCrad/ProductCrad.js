@@ -6,6 +6,7 @@ const ProductCrad = ({ item }) => {
   const showDetail = () => {
     navigate(`/product/${item.id}`);
   };
+
   return (
     <div className="prd-card" onClick={showDetail}>
       <img src={item?.img} alt="" />

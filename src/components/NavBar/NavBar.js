@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 import "./NavBar.css";
 
-const NavBar = () => {
+const NavBar = ({ authenticate, setAuthenticate }) => {
   const menuList = [
     "Women",
     "Men",
@@ -17,8 +17,12 @@ const NavBar = () => {
   ];
 
   const navigate = useNavigate();
-  const goToLogin = () => {
-    navigate("/login");
+  const search = (e) => {
+    if (e.key === "Enter") {
+      // 입력한 검색어를 읽어와서 url을 바꿔준다.
+      let keyword = e.target.value;
+      navigate(`/?q=${keyword}`);
+    }
   };
 
   return (
@@ -26,20 +30,34 @@ const NavBar = () => {
       <div className="header-inner">
         <div className="heading">
           <h1>
-            <img src={logo} alt="" />
+            <a href="/">
+              <img src={logo} alt="" />
+            </a>
           </h1>
           <div className="lnb">
             <div className="sign">
-              <button onClick={goToLogin}>
-                <FontAwesomeIcon icon={faUser} />
-                LOGIN
-              </button>
+              {authenticate ? (
+                <div onClick={() => setAuthenticate(false)}>
+                  <FontAwesomeIcon icon={faUser} />
+                  LOGOUT
+                </div>
+              ) : (
+                <div onClick={() => navigate("/login")}>
+                  <FontAwesomeIcon icon={faUser} />
+                  LOGIN
+                </div>
+              )}
             </div>
+
             <div className="search">
-              <button>
+              <i>
                 <FontAwesomeIcon icon={faMagnifyingGlass} />
-              </button>
-              <input type="text" placeholder="검색" />
+              </i>
+              <input
+                type="text"
+                placeholder="검색"
+                onKeyPress={(e) => search(e)}
+              />
             </div>
           </div>
         </div>

@@ -34,7 +34,7 @@ header .header-inner {
   right: 30px;
   top: 104px;
 }
-.lnb .search button {
+.lnb .search i {
   position: absolute;
   left: 0;
   bottom: 0;
