@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Button, Col, Container, Dropdown, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import "./ProductDetail.css";
@@ -8,13 +8,13 @@ const ProductDetail = () => {
 
   const [product, setProduct] = useState(null);
 
-  const getProductDetail = async () => {
+  const getProductDetail = useCallback(async () => {
     let url = `https://my-json-server.typicode.com/erin0110/react-homework-hnm-react-router-practice/products/${id}`;
     // let url = `http://localhost:5000/products/${id}`;
     let response = await fetch(url);
     let data = await response.json();
     setProduct(data);
-  };
+  }, []);
 
   useEffect(() => {
     getProductDetail();
