@@ -75,3 +75,29 @@ header .header-inner {
 .nav .menu li a:hover {
   text-decoration: underline;
 }
+
+@media (max-width: 1023px) {
+  .heading {
+    display: block;
+    overflow: hidden;
+  }
+  .lnb {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0 10px;
+  }
+  .lnb .search {
+    position: relative;
+    top: auto;
+    right: auto;
+    order: 1;
+  }
+  .lnb .search input {
+    width: 120px;
+  }
+  .lnb .sign {
+    position: static;
+    order: 2;
+  }
+}
