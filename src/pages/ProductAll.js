@@ -19,7 +19,7 @@ const ProductAll = () => {
 
   useEffect(() => {
     getProducts();
-  }, [query]);
+  }, [getProducts]);
 
   return (
     <Container>

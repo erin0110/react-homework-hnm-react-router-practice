@@ -10,15 +10,14 @@ const ProductDetail = () => {
 
   const getProductDetail = useCallback(async () => {
     let url = `https://my-json-server.typicode.com/erin0110/react-homework-hnm-react-router-practice/products/${id}`;
-    // let url = `http://localhost:5000/products/${id}`;
     let response = await fetch(url);
     let data = await response.json();
     setProduct(data);
-  }, []);
+  }, [id]);
 
   useEffect(() => {
     getProductDetail();
-  }, []);
+  }, [getProductDetail]);
 
   return (
     <Container className="prd-detail-container">
