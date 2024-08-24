@@ -18,3 +18,10 @@
   font-size: 15px;
   font-weight: bold;
 }
+
+@media (hover: hover) and (pointer: fine) {
+  a:hover {
+    text-decoration: none;
+    transform: none;
+  }
+}
