@@ -73,7 +73,7 @@ const NavBar = ({ authenticate, setAuthenticate }) => {
         <button className="btn-hamburger" onClick={() => toggleMenu()}>
           <FontAwesomeIcon icon={faBars} />
         </button>
-        <nav className={isOpen && "open"}>
+        <nav className={isOpen ? "open" : ""}>
           <div className="menu-wrapper">
             <button className="btn-menu-close" onClick={() => toggleMenu()}>
               <FontAwesomeIcon icon={faXmark} />

@@ -5,17 +5,15 @@ import ProductCard from "../components/ProductCrad/ProductCrad";
 
 const ProductAll = () => {
   const [productList, setProductList] = useState([]);
-  const [query, setQuery] = useSearchParams();
-  console.log("setQuery", setQuery);
+  const [query] = useSearchParams();
+  let searchQuery = query.get("q") || "";
 
   const getProducts = useCallback(async () => {
-    let searchQuery = query.get("q") || "";
-    console.log("쿼리값은?", searchQuery);
     let url = `https://my-json-server.typicode.com/erin0110/react-homework-hnm-react-router-practice/products?q=${searchQuery}`;
     let response = await fetch(url);
     let data = await response.json();
     setProductList(data);
-  }, [query]);
+  }, [searchQuery]);
 
   useEffect(() => {
     getProducts();
@@ -24,11 +22,25 @@ const ProductAll = () => {
   return (
     <Container>
       <Row>
-        {productList.map((menu, index) => (
-          <Col lg={3} key={index}>
-            <ProductCard item={menu} />
-          </Col>
-        ))}
+        {productList.length > 0 ? (
+          productList.map((menu, index) => (
+            <Col lg={3} key={index}>
+              <ProductCard item={menu} />
+            </Col>
+          ))
+        ) : (
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "200px",
+              textAlign: "center",
+            }}
+          >
+            {searchQuery}에 대한 검색 결과가 없습니다.
+          </div>
+        )}
       </Row>
     </Container>
   );
