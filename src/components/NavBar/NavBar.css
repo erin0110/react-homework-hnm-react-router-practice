@@ -117,6 +117,9 @@ header .header-inner {
     -webkit-appearance: none;
     border-radius: 0;
   }
+  .lnb .search input:focus {
+    outline: none;
+  }
   .btn-hamburger {
     position: absolute;
     top: 20px;
