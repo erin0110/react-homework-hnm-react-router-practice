@@ -1,9 +1,11 @@
-import React from "react";
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
+config.autoAddCss = false; /* eslint-disable import/first */
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
