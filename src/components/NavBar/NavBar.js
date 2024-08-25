@@ -5,10 +5,10 @@ import {
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 import "./NavBar.css";
-import { useState } from "react";
 
 const NavBar = ({ authenticate, setAuthenticate }) => {
   const menuList = [
@@ -45,7 +45,7 @@ const NavBar = ({ authenticate, setAuthenticate }) => {
         <div className="lnb">
           <div className="search">
             <i>
-              <FontAwesomeIcon icon={faMagnifyingGlass} size="1x" />
+              <FontAwesomeIcon icon={faMagnifyingGlass} />
             </i>
             <input
               type="text"
