@@ -109,8 +109,10 @@ header .header-inner {
   .lnb {
     margin-bottom: 0;
   }
+
   .lnb .search input {
     width: 120px;
+    -webkit-appearance: none;
   }
   .btn-hamburger {
     position: absolute;

@@ -19,9 +19,8 @@
   font-weight: bold;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  a:hover {
-    text-decoration: none !important;
-    transform: none !important;
+@media (max-width: 1023px) {
+  .prd-card:hover {
+    transform: none;
   }
 }
