@@ -21,7 +21,7 @@
 
 @media (hover: hover) and (pointer: fine) {
   a:hover {
-    text-decoration: none;
-    transform: none;
+    text-decoration: none !important;
+    transform: none !important;
   }
 }
