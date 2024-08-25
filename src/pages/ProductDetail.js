@@ -22,10 +22,10 @@ const ProductDetail = () => {
   return (
     <Container className="prd-detail-container">
       <Row>
-        <Col>
+        <Col xs={12} md={6}>
           <img src={product?.img} alt="" />
         </Col>
-        <Col>
+        <Col xs={12} md={6}>
           <div className="info">
             <h3>{product?.title}</h3>
             <strong>₩{product?.price}</strong>

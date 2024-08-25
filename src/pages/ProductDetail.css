@@ -1,6 +1,9 @@
 .prd-detail-container {
   margin: 40px auto 80px;
 }
+.prd-detail-container img {
+  max-width: 100%;
+}
 .info {
   margin-top: 20px;
 }
